@@ -7,6 +7,8 @@ class Order < ApplicationRecord
 
   enum status: { waiting: 0, delivered: 1 }
 
+  accepts_nested_attributes_for :order_products, allow_destroy: true
+
   before_validation :set_price
 
   private
