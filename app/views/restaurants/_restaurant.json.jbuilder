@@ -10,10 +10,11 @@ json.number restaurant.number
 json.complement restaurant.complement
 json.reference restaurant.reference
 json.cep restaurant.cep
-​
+json.category_title restaurant.category.title
+
 json.review restaurant.reviews&.average(:value).round()
 json.image_url polymorphic_url(restaurant.image) if restaurant.image.attached?
-​
+
 json.product_categories restaurant.product_categories do |product_category|
- json.partial! 'product_categories/product_category', product_category: product_category
+    json.partial! 'product_categories/product_category', product_category: product_category
 end
